@@ -44,19 +44,25 @@ class LessCompilerPlugin extends Plugin
     {
         if (!$this->isAdmin()) {
             require_once 'vendor/lessphp/Less.php';
-            $css_dir = $this->grav['config']->get('plugins.less-compiler.css_dir');
-            $less_entry = $this->grav['config']->get('plugins.less-compiler.less_entry');
             $theme_name = $this->grav['theme']['name'];
             $theme_path = './user/themes/'.$theme_name.'/';
-            $css_fullpath = $theme_path.$css_dir;
-            if (!file_exists($css_fullpath)) mkdir($css_fullpath, 0755);
-            if (file_exists($theme_path.$less_entry )) {
+            $css_dir = $this->grav['config']->get('plugins.scss-compiler.css_dir');
+            $css_file = $this->grav['config']->get('plugins.less-compiler.css_file');
+            $less_dir = $this->grav['config']->get('plugins.less-compiler.less_dir');
+            $less_file = $this->grav['config']->get('plugins.less-compiler.less_file');
+            $css_dir_path = $theme_path.$css_dir;
+            $css_file_path = $css_dir_path.$css_file;
+            $less_dir_path = $theme_path.$less_dir;
+            $less_file_path = $less_dir_path.$less_file;
+            if (!file_exists($css_dir_path)) mkdir($css_dir_path, 0755);
+            dump($less_file_path);
+            if (file_exists($less_file_path)) {
                 $css_compiled = \Less_Cache::Get(
-                    array( $theme_path.$less_entry => null),
-                    array( 'cache_dir' => $theme_path.$css_dir.'cache', 'sourceMap' => true )
+                    array( $less_file_path => null),
+                    array( 'cache_dir' => $css_dir_path.'cache', 'sourceMap' => true )
                 );
-                rename($theme_path.$css_dir.'cache/'.$css_compiled, $theme_path.$css_dir.'less-compiled.css');
-                $this->grav['assets']->addCss($theme_path.$css_dir.'less-compiled.css');
+                rename($css_dir_path.'cache/'.$css_compiled, $css_file_path);
+                $this->grav['assets']->addCss($css_file_path);
             }
         }
     }

@@ -1,6 +1,10 @@
 en:
   PLUGIN_LESS_COMPILER:
-    LESS_ENTRY: 'LESS entry file'
-    LESS_ENTRY_HELP: 'Enter full file name with relative URL to theme'
-    CSS_DIR: 'CSS output directory'
-    CSS_DIR_HELP: 'Enter relative URL to theme'
+    CSS_DIR: 'CSS directory'
+    CSS_DIR_HELP: 'Enter relative path to theme'
+    CSS_FILE: 'CSS output file name'
+    CSS_FILE_HELP: 'Enter genereated CSS file name'
+    LESS_DIR: 'LESS directory'
+    LESS_DIR_HELP: 'Enter relative path to theme'
+    LESS_FILE: 'LESS entry file name'
+    LESS_FILE_HELP: 'Enter LESS entry file name'

@@ -25,11 +25,19 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+    less_dir:
+      type: text
+      label: PLUGIN_LESS_COMPILER.LESS_DIR
+      help: PLUGIN_LESS_COMPILER.LESS_DIR_HELP
+    less_file:
+      type: text
+      label: PLUGIN_LESS_COMPILER.LESS_FILE
+      help: PLUGIN_LESS_COMPILER.LESS_FILE_HELP
     css_dir:
       type: text
       label: PLUGIN_LESS_COMPILER.CSS_DIR
       help: PLUGIN_LESS_COMPILER.CSS_DIR_HELP
-    less_entry:
+    css_file:
       type: text
-      label: PLUGIN_LESS_COMPILER.LESS_ENTRY
-      help: PLUGIN_LESS_COMPILER.LESS_ENTRY_HELP
+      label: PLUGIN_LESS_COMPILER.CSS_FILE
+      help: PLUGIN_LESS_COMPILER.CSS_FILE_HELP
