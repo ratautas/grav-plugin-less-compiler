@@ -1,0 +1,35 @@
+name: Less Compiler
+version: 0.1.0
+description: Compile LESS files to CSS utilizing https://github.com/oyejorge/less.php
+icon: plug
+author:
+  name: Algirdas Tamasauskas
+  email: algirdas.tamasauskas@gmail.com
+homepage: https://github.com/ratautas/grav-plugin-less-compiler
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/ratautas/grav-plugin-less-compiler/issues
+docs: https://github.com/ratautas/grav-plugin-less-compiler/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    css_dir:
+      type: text
+      label: PLUGIN_LESS_COMPILER.CSS_DIR
+      help: PLUGIN_LESS_COMPILER.CSS_DIR_HELP
+    less_entry:
+      type: text
+      label: PLUGIN_LESS_COMPILER.LESS_ENTRY
+      help: PLUGIN_LESS_COMPILER.LESS_ENTRY_HELP

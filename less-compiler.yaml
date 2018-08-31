@@ -1,0 +1,3 @@
+enabled: true
+css_dir: 'css/'
+less_entry: 'less/index.less'
