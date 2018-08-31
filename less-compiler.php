@@ -55,7 +55,6 @@ class LessCompilerPlugin extends Plugin
             $less_dir_path = $theme_path.$less_dir;
             $less_file_path = $less_dir_path.$less_file;
             if (!file_exists($css_dir_path)) mkdir($css_dir_path, 0755);
-            dump($less_file_path);
             if (file_exists($less_file_path)) {
                 $css_compiled = \Less_Cache::Get(
                     array( $less_file_path => null),
